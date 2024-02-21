@@ -9,5 +9,6 @@ on:
 
 jobs:
   print-username:
-    - name: "Print the input username and github actor"
-      run: echo The username is ${{ input.username }} and actor is ${{ github.actor }}
+    steps:
+      - name: "Print the input username and github actor"
+        run: echo The username is ${{ input.username }} and actor is ${{ github.actor }}
