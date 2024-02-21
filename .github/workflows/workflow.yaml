@@ -11,7 +11,6 @@ jobs:
     steps:
       - name: "Deployed By"
         run: echo "${{ github.actor }}"
-      
-    steps:
+
       - name: "Git current branch"
-        run: git branch --show-current 
+        run: git branch --show-current
