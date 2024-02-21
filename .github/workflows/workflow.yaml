@@ -9,5 +9,9 @@ jobs:
   print-username:
     runs-on: ubuntu-latest
     steps:
-      - name: "Print the input username and github actor"
-        run: echo "The username is ${{ github.event.inputs.username }} and actor is ${{ github.actor }}"
+      - name: "Deployed By"
+        run: echo "${{ github.actor }}"
+      
+    steps:
+      - name: "Git current branch"
+        run: git branch --show-current 
