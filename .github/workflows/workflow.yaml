@@ -1,4 +1,4 @@
-name: deployment-workflow
+name: Deploy to S3
 
 on:
   push:
@@ -6,11 +6,17 @@ on:
       - main
 
 jobs:
-  print-username:
+  deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: "Deployed By"
+      - name: Deployed By
         run: echo "${{ github.actor }}"
 
-      - name: "Git current branch"
-        run: git branch --show-current
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install AWS CLI
+        run: |
+          sudo apt-get install -y python3-pip
+          pip3 install --upgrade pip
+          pip3 install awscli
