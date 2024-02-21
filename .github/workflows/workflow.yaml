@@ -1,0 +1,13 @@
+name: deployment-workflow
+
+run-name: Deployed by ${{ github.actor }}
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  print-username:
+    - name: Print the input username and github actor
+      run: echo The username is ${{ input.username }} and actor is ${{ github.actor }}
